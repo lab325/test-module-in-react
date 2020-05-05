@@ -73,6 +73,7 @@ class EditForm extends Component {
                         return element;
                     })
                 }
+                <button onClick={() => this.module._add()}>新增</button>
             </div>
         )
     }

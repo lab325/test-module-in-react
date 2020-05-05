@@ -23,7 +23,7 @@ class Index extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        projectList: state.get('dataModule').get('projectList').toJS(),
+        // dataModule: state.get('dataModule').get('dataModule').toJS(),
     }
 }
 
