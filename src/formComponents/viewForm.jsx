@@ -13,8 +13,6 @@ class ViewForm extends Component {
         let { form_data } = this.state;
         let _viewForm = this.module._viewForm;
 
-        // this.module._get();
-
         return (
             <div className="view-form">
                 {
@@ -40,7 +38,6 @@ class ViewForm extends Component {
                         )
                     })
                 }
-                <button onClick={() => this.module._get()}>获取新数据</button>
             </div>
         )
     }

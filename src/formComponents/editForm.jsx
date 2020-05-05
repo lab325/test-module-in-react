@@ -33,6 +33,7 @@ class EditForm extends Component {
 
     render() {
         let { form_data } = this.state;
+        let { submitFunction } = this.props;
 
         let _editForm = this.module._editForm;
 
@@ -73,7 +74,7 @@ class EditForm extends Component {
                         return element;
                     })
                 }
-                <button onClick={() => this.module._add()}>新增</button>
+                <button onClick={() => submitFunction()}>提交</button>
             </div>
         )
     }
