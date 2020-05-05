@@ -7,7 +7,14 @@ import 'moment/locale/zh-cn';
 class EditForm extends Component {
     constructor(props) {
         super(props);
-        this.module = this.props.module;
+        /**
+         * 在直接继承该组件的情况下，module 不是传参；
+         * 但是在子组件的构造函数中同样需要定义 this.module；
+         * 此处使用子组件中定义的 this.module 替代传参中的 module；
+         */
+        if (this.props.module !== undefined) {
+            this.module = this.props.module;
+        }
         this.state = {
             form_data: this.props.form,
         }
@@ -34,6 +41,9 @@ class EditForm extends Component {
     render() {
         let { form_data } = this.state;
         let { submitFunction } = this.props;
+
+        // 在直接继承该组件的情况下，由于回调函数不是通过传参获得的，所以要通过 this
+        if (submitFunction === undefined) submitFunction = this.submitFunction;
 
         let _editForm = this.module._editForm;
 
