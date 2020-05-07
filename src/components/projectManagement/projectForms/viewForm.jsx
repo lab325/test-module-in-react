@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProjectModule from '../../../dataModule/projectModule';
 
-import ViewForm from '../../../formComponents/viewForm';
+import ViewForm from '../../../publicComponents/viewForm';
 
 class ProjectViewForm extends Component {
     constructor(props) {

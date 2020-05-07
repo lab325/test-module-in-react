@@ -4,7 +4,7 @@
  * @Author: 唐帆
  * @Date: 2020-03-09 18:54:38
  * @LastEditors: 唐帆
- * @LastEditTime: 2020-05-01 19:17:14
+ * @LastEditTime: 2020-05-07 10:51:59
  */
 import React, { Component } from 'react';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
@@ -53,11 +53,11 @@ class App extends Component {
         }
 
         return (
-            <Layout className="ant-layout-has-sider" style={{ minWidth: 900 }}>
+            <Layout className="ant-layout-has-sider">
                 <Provider store={store}>
                     <Layout style={{ minHeight: "calc(100vh)" }}>
                         <HeaderCustom collapsed={collapsed} toggle={this.toggle} username={name} />
-                        <Content style={{ width: 960, margin: "0 auto" }}>
+                        <Content style={{ width: 1080, margin: "0 auto" }}>
                             <Switch>
                                 <Route exact path={'/app'} component={Index} />
                                 <Route component={noMatch} />

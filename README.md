@@ -4,7 +4,7 @@
  * @Author: 唐帆
  * @Date: 2020-05-01 22:17:40
  * @LastEditors: 唐帆
- * @LastEditTime: 2020-05-05 15:21:42
+ * @LastEditTime: 2020-05-07 14:15:34
  -->
 ### 1 对于模块化数据组件的规划
 目的：
@@ -72,7 +72,7 @@ _add 和 _get 的形参均有默认参数，可以在不传参的情况下直接
 
 ### 2 自数据组件延申的 Form
 #### 2.1 ViewForm
-文件地址： ./src/projectManagement/publicComponents/viewForm.jsx
+文件地址： ./src/publicComponents/viewForm.jsx
 
 ##### 1 使用语法
 - 例见 ./src/projectManagement/index.jsx
@@ -88,7 +88,7 @@ _add 和 _get 的形参均有默认参数，可以在不传参的情况下直接
 - 数字（如浮点和整数）的展示后部可以添加计量单位，可以是字符或组件；
 
 #### 2.2 EditForm
-文件地址： ./src/projectManagement/publicComponents/editForm.jsx
+文件地址： ./src/publicComponents/editForm.jsx
 
 ##### 1 使用语法
 - 例见 ./src/projectManagement/index.jsx
@@ -105,27 +105,7 @@ _add 和 _get 的形参均有默认参数，可以在不传参的情况下直接
 - 2 日期 输入框直接使用的 antd 组件，时间选择上未作限制，已进行本地化；
 
 
-### 其他
-#### 1 表格跳页查看
-```
-    // 跳页查看，
-    dealWithForwardSkipScanning(dataList, start, _dataStructure) {
-        if (start === 0 || dataList.length >= start) return;
-        for (let i = dataList.length; i < start; i++) {
-            dataList.push(_dataStructure)
-        }
-        return dataList;
-    }
-
-    dealWithBackwardSkipScanning(dataList, start, newList, _dataStructure) {
-        // 判断此时列表是否为 0，且请求起始位是否等于初始值
-        console.log("if前", start, JSON.stringify(dataList[start]) !== JSON.stringify(_dataStructure));
-        console.log(JSON.stringify(dataList[start]), JSON.stringify(_dataStructure));
-
-        if (start === 0 || JSON.stringify(dataList[start]) !== JSON.stringify(_dataStructure)) return;
-        console.log(dataList, start, newList, _dataStructure);
-        for (let i = start; i < start + newList.length - 1; i++) {
-            dataList[i] = newList[i - start];
-        }
-    }
-```
+### 3 表格
+表格公共组件位置 
+文件地址：./src/publicComponents/table.jsx；
+使用案例：./src/projectManagement/projectTables/projectTable.jsx；

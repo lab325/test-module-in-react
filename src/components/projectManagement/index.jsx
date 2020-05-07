@@ -5,9 +5,8 @@ import { Component } from 'react';
 import ProjectModule from '../../dataModule/projectModule';
 import EditForm from './projectForms/editForm';
 import ViewForm from './projectForms/viewForm';
+import ProjectTable from './projectTables/projectTable'
 import EditFormExtends from './projectForms/editFormExtends';
-
-import './style.less';
 
 class ProjectManagement extends Component {
     constructor(props) {
@@ -48,6 +47,7 @@ class ProjectManagement extends Component {
                     <EditForm form={project[0]} />
                     <ViewForm form={project[0]} />
                     <EditFormExtends form={project[0]} />
+                    <ProjectTable />
                 </div>
             </div>
         )

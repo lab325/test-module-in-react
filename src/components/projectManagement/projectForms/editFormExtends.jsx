@@ -1,5 +1,5 @@
 import ProjectModule from '../../../dataModule/projectModule';
-import EditForm from '../../../formComponents/editForm';
+import EditForm from '../../../publicComponents/editForm';
 
 class ProjectEditFormExtends extends EditForm {
     constructor(props) {
