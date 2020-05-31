@@ -2,20 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import ProjectManagement from '../../components/projectManagement'
+import BoneViewForm from '../../publicComponents/boneViewForm';
+import BoneEditForm from '../../publicComponents/boneEditForm';
 
 class Index extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
+        this.state = {}
     }
 
     render() {
-
         return (
             <div>
-                <ProjectManagement />
+                {/* <ProjectManagement /> */}
+                <BoneViewForm url={'test/'} params={{}}/>
+                <BoneEditForm url={'test/'} submitUrl={'test/'} params={{}}/>
             </div>
         )
     }

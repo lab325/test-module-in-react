@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { Pagination } from 'antd';
+import { connect } from 'react-redux'
 
 import { dispatchSetDataModule } from '../dataModule/store/actionCreators'
 import store from '../store'
-import './style.less';
+
+let _outModuleName = '';
 
 class Table extends Component {
     constructor(props) {
         super(props);
         if (this.props.myModule !== undefined) {
             this.myModule = this.props.myModule;
-
+            _outModuleName = this.myModule._moduleName;
         }
         if (this.props.header !== undefined) {
             this.header = this.props.header;
@@ -52,7 +54,7 @@ class Table extends Component {
     componentDidUpdate() {
         const { allLines, pageNum, currentShowLines } = this.state;
 
-        let newLines = store.getState().get('dataModule').get(this.myModule._moduleName);
+        let newLines = this.props.neededData;
         let newLinesJs = newLines.toJS();
 
         if (allLines.length !== 0) {
@@ -120,6 +122,7 @@ class Table extends Component {
 
     render() {
         const { currentShowLines } = this.state;
+        // console.log(this.state.allLines);
 
         return (
             <div>
@@ -154,4 +157,10 @@ class Table extends Component {
     }
 }
 
-export default Table;
+const mapStateToProps = (state) => {
+    return {
+        neededData: state.get('dataModule').get(_outModuleName)
+    }
+}
+
+export default connect(mapStateToProps, null)(Table);

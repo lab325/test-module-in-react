@@ -8,6 +8,9 @@ import ViewForm from './projectForms/viewForm';
 import ProjectTable from './projectTables/projectTable'
 import EditFormExtends from './projectForms/editFormExtends';
 
+import BoneViewForm from '../../publicComponents/boneViewForm';
+
+
 class ProjectManagement extends Component {
     constructor(props) {
         super(props);
@@ -44,10 +47,11 @@ class ProjectManagement extends Component {
             <div>
                 <div className="main-left"></div>
                 <div className="main-right">
-                    <EditForm form={project[0]} />
+                    {/* <EditForm form={project[0]} />
                     <ViewForm form={project[0]} />
                     <EditFormExtends form={project[0]} />
                     <ProjectTable />
+                    <BoneViewForm /> */}
                 </div>
             </div>
         )
