@@ -13,7 +13,7 @@ function dealWithInput(value, name, onChange) {
           />
 }
 
-// 父组件传递的 dealWithInput 方法示例
+// 父组件传递的 beforeSubmit 方法示例
 function beforeSubmit(form) {
   return form
 }
