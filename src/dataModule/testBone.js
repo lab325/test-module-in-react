@@ -222,20 +222,29 @@ export class Collection extends ModelArray{
   }
   
   add(items) {
-    for (let i = 0; i < items.length - 1; i++) {
+    for (let i = 0; i < items.length; i++) {
       const singleModel = new Model()
       const item = items[i]
-      for (let i in item) {
-        singleModel.set(i, item[i])
+      for (let x in item) {
+        singleModel.set(x, item[x])
       }
-      this.ModelArray.push(singleModel)
+      this.modelArray.push(singleModel)
     }
+    // console.log(this.modelArray)
   }
 
-  fetch(params = null, methods = 'post', url = '', thenFun = null, catchFun = null) {
+  addAfterClear(items, me) {
+    const length = me.modelArray.length
+    for (let i = 0; i < length; i++) {
+      me.modelArray.pop()
+    }
+    me.add(items.data.result)
+  }
+
+  fetch(params = null, url = '', methods = 'post', thenFun = null, catchFun = null) {
     this.url = url
     fetch(this, params, methods, thenFun, catchFun)
-	}
+  }
 }
 
 

@@ -88,7 +88,7 @@ class BoneEditForm extends Component {
     if (this.beforeSubmit !== undefined) {
       formData = this.beforeSubmit(formData)
     }
-    model.fetch(formData, this.submitUrl, 'post')
+    model.save(formData, this.submitUrl)
   }
 
   render() {

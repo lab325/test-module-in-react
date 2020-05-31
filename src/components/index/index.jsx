@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import ProjectManagement from '../../components/projectManagement'
 import BoneViewForm from '../../publicComponents/boneViewForm';
 import BoneEditForm from '../../publicComponents/boneEditForm';
+import BoneTable from '../../publicComponents/boneTable';
 
 class Index extends Component {
     constructor(props) {
@@ -17,6 +18,7 @@ class Index extends Component {
                 {/* <ProjectManagement /> */}
                 <BoneViewForm url={'test/'} params={{}}/>
                 <BoneEditForm url={'test/'} submitUrl={'test/'} params={{}}/>
+                <BoneTable />
             </div>
         )
     }
